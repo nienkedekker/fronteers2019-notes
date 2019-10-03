@@ -16,14 +16,17 @@ Optimising PNG files
 3. Use indexed images, if possible
 4. Optimise fully transparent pixels
 
-![](readme/IMG_84932.jpg)
+![](readme/IMG_8493.jpg)
 
 ## Slides:
 [A deep dive into images on the web](https://www.chenhuijing.com/slides/71-fronteers-2019/#/)
 
 ## Resources:
-[Una Kravets: CSS Blend Modes, Because … - JSConf.Asia 2018 - YouTube](https://www.youtube.com/watch?v=XZmvHVVj0Ns)
-[Quantum Up Close: What is a browser engine? - Mozilla Hacks - the Web developer blog](https://hacks.mozilla.org/2017/05/quantum-up-close-what-is-a-browser-engine/)
+- [Una Kravets: CSS Blend Modes, Because … 
+JSConf.Asia 2018 - YouTube](https://www.youtube.com/watch?v=XZmvHVVj0Ns)
+
+- [Quantum Up Close: What is a browser engine? 
+ Mozilla Hacks - the Web developer blog](https://hacks.mozilla.org/2017/05/quantum-up-close-what-is-a-browser-engine/)
 
 
 # Christophe Porteneuve - Fun & Games with ES Proxies
@@ -84,11 +87,14 @@ This has use cases in security-related scenarios, metered access.
 
  
 ## Resources:
-[GitHub - mathiasbynens/tpyo: A small script that enables you to make typos in JavaScript property names. Powered by ES2015 proxies + Levenshtein string distance.](https://github.com/mathiasbynens/tpyo)
-[GitHub - immerjs/immer: Create the next immutable state by mutating the current one](https://github.com/immerjs/immer): immutability helper, lets us write mutative code. Copy-on-write for nested structures using recursive revocable proxying with almost every trap. 
+- [GitHub - mathiasbynens/tpyo: A small script that enables you to make typos in JavaScript property names. Powered by ES2015 proxies + Levenshtein string distance.](https://github.com/mathiasbynens/tpyo)
+
+- [GitHub - immerjs/immer: Create the next immutable state by mutating the current one](https://github.com/immerjs/immer): immutability helper, lets us write mutative code. Copy-on-write for nested structures using recursive revocable proxying with almost every trap. 
+
 Writing reducer-style logic becomes very approachable:
 ![](readme/IMG_8507.jpg)
-[Copy-on-write - Wikipedia](https://en.wikipedia.org/wiki/Copy-on-write)
+
+-[Copy-on-write - Wikipedia](https://en.wikipedia.org/wiki/Copy-on-write)
 
 
 # Jad Joubran - Secrets of native-like PWAs
