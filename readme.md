@@ -16,7 +16,7 @@ Optimising PNG files
 3. Use indexed images, if possible
 4. Optimise fully transparent pixels
 
-![](readme/IMG_8493%203.HEIC)
+![](readme/IMG_8493%203.jpg)
 
 ## Slides:
 [A deep dive into images on the web](https://www.chenhuijing.com/slides/71-fronteers-2019/#/)
@@ -55,21 +55,21 @@ The two most useful traps are `get` and `set`:
 
 
 ## tpyo demo:
-![](readme/IMG_8498%202.HEIC)
+![](readme/IMG_8498%202.jpg)
 
 ## Core code tpyo (simplified):
-![](readme/IMG_8499%202.HEIC)
+![](readme/IMG_8499%202.jpg)
 
 ## API fetching
-![](readme/IMG_8500%202.HEIC)
-![](readme/IMG_8501%202.HEIC)
+![](readme/IMG_8500%202.jpg)
+![](readme/IMG_8501%202.jpg)
 
 ## Negative array indices:
-![](readme/IMG_8502%202.HEIC)
+![](readme/IMG_8502%202.jpg)
 
 ## Defensive objects:
 Sometimes you don’t want undefined on missing props, you want a bonafide exception.
-![](readme/IMG_8503%202.HEIC)
+![](readme/IMG_8503%202.jpg)
 
 `Apply` and `construct` are traps designed for functions. `Apply` intercepts the fall to a function. Useful for copy-on-write implementations that need to automatically wrap method return values in proxies.
 Construct is the same thing for `new`,  so it intercepts using the `new` operator on the function. The result must be an object. 
@@ -79,15 +79,15 @@ Proxies can be revocable. It’s an alternate construction method that lets us r
 This has use cases in security-related scenarios, metered access.
 
 ## Example revocability:
-![](readme/IMG_8505.HEIC)
-![](readme/IMG_8506.HEIC)
+![](readme/IMG_8505.jpg)
+![](readme/IMG_8506.jpg)
 
  
 ## Resources:
 [GitHub - mathiasbynens/tpyo: A small script that enables you to make typos in JavaScript property names. Powered by ES2015 proxies + Levenshtein string distance.](https://github.com/mathiasbynens/tpyo)
 [GitHub - immerjs/immer: Create the next immutable state by mutating the current one](https://github.com/immerjs/immer): immutability helper, lets us write mutative code. Copy-on-write for nested structures using recursive revocable proxying with almost every trap. 
 Writing reducer-style logic becomes very approachable:
-![](readme/IMG_8507.HEIC)
+![](readme/IMG_8507.jpg)
 [Copy-on-write - Wikipedia](https://en.wikipedia.org/wiki/Copy-on-write)
 
 
