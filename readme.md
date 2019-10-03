@@ -16,7 +16,7 @@ Optimising PNG files
 3. Use indexed images, if possible
 4. Optimise fully transparent pixels
 
-![](readme/IMG_8493%205.jpg)
+![](readme/IMG_8493.jpg)
 
 ## Slides:
 * [A deep dive into images on the web](https://www.chenhuijing.com/slides/71-fronteers-2019/#/)
@@ -56,21 +56,21 @@ The two most useful traps are `get` and `set`:
 `set(target, property, value, receiver)`: intercepts property writes.
 
 ## tpyo demo:
-![](readme/IMG_8498%205.jpg)
+![](readme/IMG_8498.jpg)
 
 ## Core code tpyo (simplified):
-![](readme/IMG_8499%205.jpg)
+![](readme/IMG_8499.jpg)
 
 ## API fetching
-![](readme/IMG_8500%205.jpg)
-![](readme/IMG_8501%205.jpg)
+![](readme/IMG_8500.jpg)
+![](readme/IMG_8501.jpg)
 
 ## Negative array indices:
-![](readme/IMG_8502%205.jpg)
+![](readme/IMG_8502.jpg)
 
 ## Defensive objects:
 Sometimes you don’t want undefined on missing props, you want a bonafide exception.
-![](readme/IMG_8503%205.jpg)
+![](readme/IMG_8503.jpg)
 
 `Apply` and `construct` are traps designed for functions. `Apply` intercepts the fall to a function. Useful for copy-on-write implementations that need to automatically wrap method return values in proxies.
 Construct is the same thing for `new`,  so it intercepts using the `new` operator on the function. The result must be an object.
@@ -80,14 +80,16 @@ Proxies can be revocable. It’s an alternate construction method that lets us r
 This has use cases in security-related scenarios, metered access.
 
 ## Example revocability:
-![](readme/IMG_8505%205.jpg)
-![](readme/IMG_8506%205.jpg)
+![](readme/IMG_8505.jpg)
+
+![](readme/IMG_8506.jpg)
 
 ## Resources:
 * [GitHub - mathiasbynens/tpyo: A small script that enables you to make typos in JavaScript property names. Powered by ES2015 proxies + Levenshtein string distance.](https://github.com/mathiasbynens/tpyo)
 
 * [GitHub - immerjs/immer: Create the next immutable state by mutating the current one](https://github.com/immerjs/immer): immutability helper, lets us write mutative code. Copy-on-write for nested structures using recursive revocable proxying with almost every trap. Writing reducer-style logic becomes very approachable:
-![](readme/IMG_8507%205.jpg)
+
+![](readme/IMG_8507.jpg)
 
 * [Copy-on-write - Wikipedia](https://en.wikipedia.org/wiki/Copy-on-write)
 
@@ -125,7 +127,7 @@ Pick *two* of these. We’re always making a trade-off.
 
 **Claim**: shadow DOM makes SSR impossible. But a standard SSR solution also needs hydration. Web component SSR can be seen more as “pre-upgrade” and “upgraded”:
 
-![](readme/IMG_8513%202.HEIC)
+![](readme/IMG_8513.jpg)
 
 **Claim**: web components are verbose. This is true, but there’s no magic to it either. Another trade-off.
 
@@ -137,7 +139,7 @@ Standards are good, and it’s easy to take that for granted. Compared to 10 yea
 
 Standards are the _known_, proprietary	is the _unknown_. If you don’t move, you stagnate. But if you move too much, you get risk. So, who’s right? When one blocks the other it’s a bug. Example: styling a `select`. It’s horrible, and can be regarded as a bug because the standard is blocking the proprietary.  
 
-![](readme/EF9g6Q0U8AAwgE-%202.jpg)
+![](readme/twitimg.jpg)
 
 *The standard did not block the proprietary, but the proprietary is blocking the standard, and that’s a bug in React.*
 
