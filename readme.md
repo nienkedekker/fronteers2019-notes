@@ -199,7 +199,7 @@ At Thread they adopted CSS Modules gradually:
 ![](img/IMG_8534.jpg)
 
 ## Resources:
-[Structuring React applications](https://javascriptplayground.com/structuring-react-applications/)
-[Habits of Successful React components](https://javascriptplayground.com/habits-of-successful-react-components/)
-[Migrating complex JavaScript applications](https://javascriptplayground.com/migrating-complex-javascript-angular-react/)
+* [Structuring React applications](https://javascriptplayground.com/structuring-react-applications/)
+* [Habits of Successful React components](https://javascriptplayground.com/habits-of-successful-react-components/)
+* [Migrating complex JavaScript applications](https://javascriptplayground.com/migrating-complex-javascript-angular-react/)
 
