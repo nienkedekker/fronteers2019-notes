@@ -16,7 +16,7 @@ Optimising PNG files
 3. Use indexed images, if possible
 4. Optimise fully transparent pixels
 
-![](readme/IMG_8493%202.jpg)
+![](img/IMG_8493.jpg)
 
 ## Slides:
 * [A deep dive into images on the web](https://www.chenhuijing.com/slides/71-fronteers-2019/#/)
@@ -56,21 +56,21 @@ The two most useful traps are `get` and `set`:
 `set(target, property, value, receiver)`: intercepts property writes.
 
 ## tpyo demo:
-![](readme/IMG_8498%202.jpg)
+![](img/IMG_8498.jpg)
 
 ## Core code tpyo (simplified):
-![](readme/IMG_8499%202.jpg)
+![](img/IMG_8499.jpg)
 
 ## API fetching
-![](readme/IMG_8500%202.jpg)
-![](readme/IMG_8501%202.jpg)
+![](img/IMG_8500.jpg)
+![](img/IMG_8501.jpg)
 
 ## Negative array indices:
-![](readme/IMG_8502%202.jpg)
+![](img/IMG_8502.jpg)
 
 ## Defensive objects:
 Sometimes you don’t want undefined on missing props, you want a bonafide exception.
-![](readme/IMG_8503%202.jpg)
+![](img/IMG_8503.jpg)
 
 `Apply` and `construct` are traps designed for functions. `Apply` intercepts the fall to a function. Useful for copy-on-write implementations that need to automatically wrap method return values in proxies.
 Construct is the same thing for `new`,  so it intercepts using the `new` operator on the function. The result must be an object.
@@ -80,14 +80,14 @@ Proxies can be revocable. It’s an alternate construction method that lets us r
 This has use cases in security-related scenarios, metered access.
 
 ## Example revocability:
-![](readme/IMG_8505%202.jpg)
-![](readme/IMG_8506%202.jpg)
+![](img/IMG_8505.jpg)
+![](img/IMG_8506.jpg)
 
 ## Resources:
 * [GitHub - mathiasbynens/tpyo: A small script that enables you to make typos in JavaScript property names. Powered by ES2015 proxies + Levenshtein string distance.](https://github.com/mathiasbynens/tpyo)
 
 * [GitHub - immerjs/immer: Create the next immutable state by mutating the current one](https://github.com/immerjs/immer): immutability helper, lets us write mutative code. Copy-on-write for nested structures using recursive revocable proxying with almost every trap. Writing reducer-style logic becomes very approachable:
-![](readme/IMG_8507%202.jpg)
+![](img/IMG_8507.jpg)
 
 * [Copy-on-write - Wikipedia](https://en.wikipedia.org/wiki/Copy-on-write)
 
@@ -125,7 +125,7 @@ Pick *two* of these. We’re always making a trade-off.
 
 **Claim**: shadow DOM makes SSR impossible. But a standard SSR solution also needs hydration. Web component SSR can be seen more as “pre-upgrade” and “upgraded”:
 
-![](readme/IMG_8513.HEIC)
+![](img/IMG_8513.jpg)
 
 **Claim**: web components are verbose. This is true, but there’s no magic to it either. Another trade-off.
 
@@ -137,7 +137,7 @@ Standards are good, and it’s easy to take that for granted. Compared to 10 yea
 
 Standards are the _known_, proprietary	is the _unknown_. If you don’t move, you stagnate. But if you move too much, you get risk. So, who’s right? When one blocks the other it’s a bug. Example: styling a `select`. It’s horrible, and can be regarded as a bug because the standard is blocking the proprietary.  
 
-![](readme/EF9g6Q0U8AAwgE-.jpg)
+![](img/twitimg.jpg)
 
 *The standard did not block the proprietary, but the proprietary is blocking the standard, and that’s a bug in React.*
 
@@ -165,8 +165,7 @@ How do you allow components do differ slightly when required while still keeping
 
 Jack tackled it using a thing called variants. Before they allowed a lot of boolean flags, but now they have explicit variants. Always prefer explicit configuration over implicit options. Don’t allow people to hide individual bits. 
 
-![](readme/IMG_8527.HEIC)
-
+![](img/IMG_8527.jpg)
 
 What if a component is “too big”? Components are cheap and you should have lots of them. But they’re not free. What are the costs of adding a new component?
 - maintenance 
@@ -182,31 +181,25 @@ When is a component ready to be split up, given its size and complexity? It depe
 
 Unfortunately there are no hard rules here, but asking these questions can help. And not all components should be black boxes! If components know nothing about themselves and each other, or get any data, they might not be very useful. Which components should receive data, and which shouldn’t? How do we give a component data anyway?
 * **fetching from an API**
-* ![](readme/IMG_8528.HEIC)
+* ![](img/IMG_8528.jpg)
 * **via attributes passing html**
-* ![](readme/IMG_8529.HEIC)
+* ![](img/IMG_8529.jpg)
 * **via data in a script tags**
-* ![](readme/IMG_8530.HEIC)
-* ![](readme/IMG_8531.HEIC)
+* ![](img/IMG_8530.jpg)
+* ![](img/IMG_8531.jpg)
 
-![](readme/IMG_8532.HEIC)
+![](img/IMG_8532.jpg)
 
-![](readme/IMG_8533.HEIC)
+![](img/IMG_8533.jpg)
 
 Incremental changes are best. It’s slower at first as you build tools to bridge the legacy gap. But they let you test your assumptions and you’re always adding value.
 
 At Thread they adopted CSS Modules gradually:
 
-![](readme/IMG_8534.HEIC)
+![](img/IMG_8534.jpg)
 
 ## Resources:
-[The JavaScript Playground](https://javascriptplayground.com/)
+[Structuring React applications](https://javascriptplayground.com/structuring-react-applications/)
+[Habits of Successful React components](https://javascriptplayground.com/habits-of-successful-react-components/)
+[Migrating complex JavaScript applications](https://javascriptplayground.com/migrating-complex-javascript-angular-react/)
 
-# Peter Müller - High Performance Web Fonts
-….
-
-# Anjana Vakil - The universe in a single arrow: A live dive into the lambda calculus
-….
-
-# Mandy Michael - The future of Web Typography with Variable Fonts
-…
