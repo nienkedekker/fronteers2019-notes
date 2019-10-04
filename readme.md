@@ -16,7 +16,7 @@ Optimising PNG files
 3. Use indexed images, if possible
 4. Optimise fully transparent pixels
 
-![](readme/IMG_8493.jpg)
+![](readme/IMG_8493%202.jpg)
 
 ## Slides:
 * [A deep dive into images on the web](https://www.chenhuijing.com/slides/71-fronteers-2019/#/)
@@ -56,21 +56,21 @@ The two most useful traps are `get` and `set`:
 `set(target, property, value, receiver)`: intercepts property writes.
 
 ## tpyo demo:
-![](readme/IMG_8498.jpg)
+![](readme/IMG_8498%202.jpg)
 
 ## Core code tpyo (simplified):
-![](readme/IMG_8499.jpg)
+![](readme/IMG_8499%202.jpg)
 
 ## API fetching
-![](readme/IMG_8500.jpg)
-![](readme/IMG_8501.jpg)
+![](readme/IMG_8500%202.jpg)
+![](readme/IMG_8501%202.jpg)
 
 ## Negative array indices:
-![](readme/IMG_8502.jpg)
+![](readme/IMG_8502%202.jpg)
 
 ## Defensive objects:
 Sometimes you don’t want undefined on missing props, you want a bonafide exception.
-![](readme/IMG_8503.jpg)
+![](readme/IMG_8503%202.jpg)
 
 `Apply` and `construct` are traps designed for functions. `Apply` intercepts the fall to a function. Useful for copy-on-write implementations that need to automatically wrap method return values in proxies.
 Construct is the same thing for `new`,  so it intercepts using the `new` operator on the function. The result must be an object.
@@ -80,16 +80,14 @@ Proxies can be revocable. It’s an alternate construction method that lets us r
 This has use cases in security-related scenarios, metered access.
 
 ## Example revocability:
-![](readme/IMG_8505.jpg)
-
-![](readme/IMG_8506.jpg)
+![](readme/IMG_8505%202.jpg)
+![](readme/IMG_8506%202.jpg)
 
 ## Resources:
 * [GitHub - mathiasbynens/tpyo: A small script that enables you to make typos in JavaScript property names. Powered by ES2015 proxies + Levenshtein string distance.](https://github.com/mathiasbynens/tpyo)
 
 * [GitHub - immerjs/immer: Create the next immutable state by mutating the current one](https://github.com/immerjs/immer): immutability helper, lets us write mutative code. Copy-on-write for nested structures using recursive revocable proxying with almost every trap. Writing reducer-style logic becomes very approachable:
-
-![](readme/IMG_8507.jpg)
+![](readme/IMG_8507%202.jpg)
 
 * [Copy-on-write - Wikipedia](https://en.wikipedia.org/wiki/Copy-on-write)
 
@@ -127,7 +125,7 @@ Pick *two* of these. We’re always making a trade-off.
 
 **Claim**: shadow DOM makes SSR impossible. But a standard SSR solution also needs hydration. Web component SSR can be seen more as “pre-upgrade” and “upgraded”:
 
-![](readme/IMG_8513.jpg)
+![](readme/IMG_8513.HEIC)
 
 **Claim**: web components are verbose. This is true, but there’s no magic to it either. Another trade-off.
 
@@ -139,7 +137,7 @@ Standards are good, and it’s easy to take that for granted. Compared to 10 yea
 
 Standards are the _known_, proprietary	is the _unknown_. If you don’t move, you stagnate. But if you move too much, you get risk. So, who’s right? When one blocks the other it’s a bug. Example: styling a `select`. It’s horrible, and can be regarded as a bug because the standard is blocking the proprietary.  
 
-![](readme/twitimg.jpg)
+![](readme/EF9g6Q0U8AAwgE-.jpg)
 
 *The standard did not block the proprietary, but the proprietary is blocking the standard, and that’s a bug in React.*
 
@@ -149,3 +147,66 @@ Standards are the _known_, proprietary	is the _unknown_. If you don’t move, yo
 
 # Resources
 [Custom Elements Everywhere](https://custom-elements-everywhere.com/)
+
+# Jack Franklin - Components on the Web
+What do we mean when we talk about components? A component is a box of functionality. Once you have a tree of components, diving in and finding the code or functionality you need is easier. At least, that’s the idea. Most of us are working on applications that have been around for a long time, using things like jQuery, Backbone and Angular 1. This was all fine and reasonable several years ago, especially if it continues to work today. So how do you take existing applications and sneak in components?
+
+Components are designed to be black boxes of functionality. You don’t need to worry about the implementation of someone else’s component, you just need to know how to configure it. *How* it works is not your problem, just put it into a page and it should work. 
+
+**Advice**: strive for black box components because they give you the ability to work in isolation.  Keep them as small as possible - don’t overload them with information (just like a human brain, really).
+
+**Problem**: re-usability. If you want to re-use components across your application, but they’re  *slightly* different, what do you do? Like if you have an ItemCard component, and sometimes you want to show a logo, but not always. Do you create two components, ItemCardLogo and ItemCardNoLogo? Or do you write one ItemCard component that can have several boolean flags/states? Where do you draw the line between flexibility and simplicity?
+
+**Advice**: more options lead to more confusion. However, there is no such thing as a bad decision, only a decision made with less data than you have now. Past You may have made a decision you now regret, but there was a reason for that decision and assuming that decision is bad is not fair. What you _can_ do is learn from Past You. What can I do that makes Future You’s life easier?
+
+The reusability see-saw creeps up to you. It’s easy to keep adding options. Before you know it you have a single component that does hundreds of things. You will constantly trade off maintainability and configurability. You need to be able to deal with components that are nearly the same. This is also something that the design team needs to get involved with. 
+
+How do you allow components do differ slightly when required while still keeping a consistent feeling on the site?
+
+Jack tackled it using a thing called variants. Before they allowed a lot of boolean flags, but now they have explicit variants. Always prefer explicit configuration over implicit options. Don’t allow people to hide individual bits. 
+
+![](readme/IMG_8527.HEIC)
+
+
+What if a component is “too big”? Components are cheap and you should have lots of them. But they’re not free. What are the costs of adding a new component?
+- maintenance 
+- complexity
+- communication
+- documentation
+
+When is a component ready to be split up, given its size and complexity? It depends. Here are some useful questions you can ask yourself:
+- how many lines of code is it? Not a great general metric, sometimes fewer lines of codes is less readable. But if you have a 2000 line component, it’s a lot harder to find bugs than in a 200 line component.
+- how many different HTML elements does this component render?
+- how hard is this component to understand? Is it easy or hard to read?
+- is the component hard to name? Do I naturally want to put an “and” in the name: `ItemNameAndPrice` is screaming to be split up into two components.
+
+Unfortunately there are no hard rules here, but asking these questions can help. And not all components should be black boxes! If components know nothing about themselves and each other, or get any data, they might not be very useful. Which components should receive data, and which shouldn’t? How do we give a component data anyway?
+* **fetching from an API**
+* ![](readme/IMG_8528.HEIC)
+* **via attributes passing html**
+* ![](readme/IMG_8529.HEIC)
+* **via data in a script tags**
+* ![](readme/IMG_8530.HEIC)
+* ![](readme/IMG_8531.HEIC)
+
+![](readme/IMG_8532.HEIC)
+
+![](readme/IMG_8533.HEIC)
+
+Incremental changes are best. It’s slower at first as you build tools to bridge the legacy gap. But they let you test your assumptions and you’re always adding value.
+
+At Thread they adopted CSS Modules gradually:
+
+![](readme/IMG_8534.HEIC)
+
+## Resources:
+[The JavaScript Playground](https://javascriptplayground.com/)
+
+# Peter Müller - High Performance Web Fonts
+….
+
+# Anjana Vakil - The universe in a single arrow: A live dive into the lambda calculus
+….
+
+# Mandy Michael - The future of Web Typography with Variable Fonts
+…
