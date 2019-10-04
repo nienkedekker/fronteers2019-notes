@@ -145,7 +145,7 @@ Standards are the _known_, proprietary	is the _unknown_. If you don’t move, yo
 > Developer > Vendor  
 > User > Developer  
 
-# Resources
+## Resources
 [Custom Elements Everywhere](https://custom-elements-everywhere.com/)
 
 # Jack Franklin - Components on the Web
