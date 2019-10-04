@@ -180,13 +180,16 @@ When is a component ready to be split up, given its size and complexity? It depe
 - is the component hard to name? Do I naturally want to put an “and” in the name: `ItemNameAndPrice` is screaming to be split up into two components.
 
 Unfortunately there are no hard rules here, but asking these questions can help. And not all components should be black boxes! If components know nothing about themselves and each other, or get any data, they might not be very useful. Which components should receive data, and which shouldn’t? How do we give a component data anyway?
-* **fetching from an API**
-* ![](img/IMG_8528.jpg)
-* **via attributes passing html**
-* ![](img/IMG_8529.jpg)
-* **via data in a script tags**
-* ![](img/IMG_8530.jpg)
-* ![](img/IMG_8531.jpg)
+
+## fetching from an API
+![](img/IMG_8528.jpg)
+
+## via attributes passing html
+![](img/IMG_8529.jpg)
+
+## via data in script tags
+![](img/IMG_8530.jpg)
+![](img/IMG_8531.jpg)
 
 ![](img/IMG_8532.jpg)
 
